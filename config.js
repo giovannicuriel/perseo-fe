@@ -41,6 +41,7 @@ config.endpoint = {
     rulesPath : '/rules',
     actionsPath : '/actions/do',
     noticesPath : '/notices',
+    noticesV2Path : '/noticesv2',
     vrPath : '/m2m/vrules',
     checkPath : '/check',
     versionPath : '/version',

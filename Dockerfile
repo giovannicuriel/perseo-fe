@@ -16,7 +16,7 @@
 # For those usages not covered by the GNU Affero General Public License please contact with iot_support at tid dot es
 #
 
-FROM centos:6
+FROM centos:7
 
 ARG NODEJS_VERSION=
 
@@ -45,7 +45,7 @@ RUN yum update -y && \
   echo "INFO: Cleaning unused software..." && \
   yum erase -y --remove-leaves gcc-c++ yum-utils yum-plugin-remove-with-leaves libss && \
   rm -rf /opt/node-v${NODEJS_VERSION}.tar.gz /opt/node-v${NODEJS_VERSION} && \
-  # Erase without dependencies of the document formatting system (man). This cannot be removed using yum 
+  # Erase without dependencies of the document formatting system (man). This cannot be removed using yum
   # as yum uses hard dependencies and doing so will uninstall essential packages
   rpm -qa groff redhat-logos | xargs -r rpm -e --nodeps && \
   # Clean yum data
