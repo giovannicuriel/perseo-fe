@@ -16,7 +16,7 @@
 # For those usages not covered by the GNU Affero General Public License please contact with iot_support at tid dot es
 #
 
-FROM node:4
+FROM node:8
 
 WORKDIR /opt/perseo-fe
 ENV PERSEO_MONGO_HOST=mongodb
