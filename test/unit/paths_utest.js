@@ -33,7 +33,7 @@ describe('Paths', function() {
             var cases = ['a', 'aa', new Array(50).join('x')];
             cases.forEach(function(c) {
                 var err = paths.validService(c);
-                should(err).not.exist;
+                should(err).be.null;
             });
         });
         it('should return error with empty value', function() {
@@ -63,17 +63,17 @@ describe('Paths', function() {
     });
     describe('#validServicePath()', function() {
         it('should return null with a valid subservice', function() {
-            var cases = ['/', '/a/b/c', '/aa', new Array(50).join('x') + '/' + new Array(50).join('y')];
+            var cases = ['/', '/a/b/c', '/aa', '/' + new Array(50).join('x') + '/' + new Array(50).join('y')];
             cases.forEach(function(c) {
                 var err = paths.validServicePath(c);
-                should(err).not.exist;
+                should(err).be.null;
             });
         });
         it('should return null with a right number of components', function() {
             var cases = [new Array(1).join('/x'), new Array(5).join('/x'), new Array(10).join('/x')];
             cases.forEach(function(c) {
                 var err = paths.validServicePath(c);
-                should(err).not.exist;
+                should(err).be.null;
             });
         });
         it('should return null with a wrong number of components', function() {
